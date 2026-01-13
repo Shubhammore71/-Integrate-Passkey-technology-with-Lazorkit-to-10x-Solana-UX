@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/Card';
 import { Clock, CheckCircle, XCircle } from 'lucide-react';
 
 export function SessionDemo() {
+  // FIX: Changed 'account' to 'smartWalletPubkey'
   const { isConnected, smartWalletPubkey } = useWalletInfo();
   const [sessionStartTime, setSessionStartTime] = useState<Date | null>(null);
   const [sessionDuration, setSessionDuration] = useState<string>('0s');
@@ -18,7 +19,7 @@ export function SessionDemo() {
       setSessionStartTime(null);
       setSessionDuration('0s');
     }
-  }, [isConnected]);
+  }, [isConnected, sessionStartTime]);
 
   useEffect(() => {
     if (!sessionStartTime) return;
@@ -66,12 +67,13 @@ export function SessionDemo() {
         </div>
 
         {/* Session Info */}
-        {isConnected && account && (
+        {/* FIX: Changed account check to smartWalletPubkey */}
+        {isConnected && smartWalletPubkey && (
           <div className="bg-gray-900 rounded-lg p-4 space-y-3">
             <div>
-              <p className="text-xs text-gray-400 mb-1">Credential ID</p>
+              <p className="text-xs text-gray-400 mb-1">Smart Wallet Address</p>
               <p className="text-sm text-gray-200 font-mono break-all">
-                {account.credentialId || 'N/A'}
+                {smartWalletPubkey.toString()}
               </p>
             </div>
             <div>
@@ -83,10 +85,9 @@ export function SessionDemo() {
           </div>
         )}
 
-        {/* Feature Explanation */}
         <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
           <p className="text-sm text-blue-200">
-            ✨ Try refreshing the page! Your wallet connection persists automatically thanks to Lazorkit's session management.
+            ✨ Try refreshing the page! Your wallet connection persists automatically.
           </p>
         </div>
       </div>

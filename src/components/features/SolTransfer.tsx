@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 import { DEMO_RECIPIENT } from '@/config/constants';
 
 export function SolTransfer() {
-  const { signAndSendTransaction, smartWalletPubkey, isConnected, isSigning, refreshBalance } = useWalletInfo();
+    const { signAndSendTransaction, smartWalletPubkey, isConnected, isLoading: isSigning, refreshBalance } = useWalletInfo();
   const [recipient, setRecipient] = useState(DEMO_RECIPIENT);
   const [amount, setAmount] = useState('0.01');
   const [lastSignature, setLastSignature] = useState<string | null>(null);
