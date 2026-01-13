@@ -1,4 +1,3 @@
-// src/app/providers.tsx
 'use client';
 
 import React, { useEffect } from 'react';
@@ -9,7 +8,7 @@ import { LAZORKIT_CONFIG } from '@/config/constants';
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Buffer polyfill for browser
+    // Buffer polyfill for browser (safe, only runs client-side)
     if (typeof window !== 'undefined' && !window.Buffer) {
       window.Buffer = Buffer;
     }
@@ -19,7 +18,11 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     <LazorkitProvider
       rpcUrl={LAZORKIT_CONFIG.rpcUrl}
       portalUrl={LAZORKIT_CONFIG.portalUrl}
-      paymasterUrl={LAZORKIT_CONFIG.paymasterUrl}
+      paymasterConfig={{
+        paymasterUrl: LAZORKIT_CONFIG.paymasterUrl,
+        // Optional: add more paymaster options here later if needed
+        // e.g. feeToken: 'USDC', sponsoredOperations: [...]
+      }}
     >
       <Toaster
         position="top-right"
