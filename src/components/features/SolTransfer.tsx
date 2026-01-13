@@ -11,8 +11,9 @@ import toast from 'react-hot-toast';
 import { DEMO_RECIPIENT } from '@/config/constants';
 
 export function SolTransfer() {
-    const { signAndSendTransaction, smartWalletPubkey, isConnected, isLoading: isSigning, refreshBalance } = useWalletInfo();
- // Explicitly add <string> to the useState hook
+// Change isSigning to isLoading (standard for this hook)
+// Explicitly add <string> to the state to allow typing new addresses
+const { signAndSendTransaction, smartWalletPubkey, isConnected, isLoading: isSigning, refreshBalance } = useWalletInfo();
 const [recipient, setRecipient] = useState<string>(DEMO_RECIPIENT);
 const [amount, setAmount] = useState<string>('0.01');
   const [lastSignature, setLastSignature] = useState<string | null>(null);
