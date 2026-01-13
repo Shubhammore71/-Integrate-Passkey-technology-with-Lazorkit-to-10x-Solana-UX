@@ -9,6 +9,8 @@ View the working integration here:https://integrate-passkey-technology-with-l-sa
 
 ![Demo Screenshot](./demo.png)
 
+![Demo Screenshot](./demo2.png)
+
 
 
 ## ✨ Features
