@@ -12,8 +12,9 @@ import { DEMO_RECIPIENT } from '@/config/constants';
 
 export function SolTransfer() {
     const { signAndSendTransaction, smartWalletPubkey, isConnected, isLoading: isSigning, refreshBalance } = useWalletInfo();
-  const [recipient, setRecipient] = useState(DEMO_RECIPIENT);
-  const [amount, setAmount] = useState('0.01');
+ // Explicitly add <string> to the useState hook
+const [recipient, setRecipient] = useState<string>(DEMO_RECIPIENT);
+const [amount, setAmount] = useState<string>('0.01');
   const [lastSignature, setLastSignature] = useState<string | null>(null);
 
   const handleTransfer = async () => {
