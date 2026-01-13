@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/Card';
 import { Clock, CheckCircle, XCircle } from 'lucide-react';
 
 export function SessionDemo() {
-  const { isConnected, account } = useWalletInfo();
+  const { isConnected, smartWalletPubkey } = useWalletInfo();
   const [sessionStartTime, setSessionStartTime] = useState<Date | null>(null);
   const [sessionDuration, setSessionDuration] = useState<string>('0s');
 
