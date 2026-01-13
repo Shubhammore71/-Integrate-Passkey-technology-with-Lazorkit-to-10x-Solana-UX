@@ -5,7 +5,7 @@ A comprehensive Next.js application showcasing Lazorkit SDK integration with pas
 ![Lazorkit Demo](https://img.shields.io/badge/Solana-Devnet-purple) ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
 🔗 Live Demo
-View the working integration here:https://integrate-passkey-technology-with-lazorkit-to-10x-8ccbdpabf.vercel.app/
+View the working integration here:https://integrate-passkey-technology-with-l-sable.vercel.app/
 
 ![Demo Screenshot](./demo.png)
 
