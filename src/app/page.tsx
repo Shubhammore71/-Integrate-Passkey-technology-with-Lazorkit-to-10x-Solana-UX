@@ -153,7 +153,7 @@ export default function Home() {
       <footer className="border-t border-gray-800 py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400 text-sm">
-            Built for the Lazorkit Bounty 2025 • Made with ❤️ by the community
+            Built for the Lazorkit Bounty 2025 • Made with ❤️ by Shubham
           </p>
         </div>
       </footer>
